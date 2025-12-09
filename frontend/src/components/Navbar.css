@@ -1,0 +1,117 @@
+/* Navbar container styles */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(to right, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
+}
+
+.navbar-nav {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 14px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* BRAND NAME - HOME BUTTON */
+.navbar-brand {
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23,1,0.32,1);
+}
+
+.navbar-brand:hover {
+  color: #38bdf8;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+  transform: translateY(-2px);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 40px;
+  font-size: 0.95rem;
+}
+
+/* Original nav-link underline animation */
+.nav-link {
+  position: relative;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 4px 0;
+  transition:
+    color 160ms ease,
+    transform 90ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #020203, #202324);
+  border-radius: 1px;
+  transition: width 180ms ease;
+}
+
+.nav-link:hover {
+  color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Button-style nav links */
+.nav-button {
+  background: linear-gradient(135deg, #121314, #0ea5e9);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  border-radius: 90px;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 14px 35px rgba(56, 189, 248, 0.45);
+  transition: 
+    background 180ms ease, 
+    color 180ms ease, 
+    border-color 180ms ease, 
+    transform 120ms ease, 
+    box-shadow 180ms ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 20px rgba(56, 189, 248, 0.6);
+  color: #ffffff !important;
+}
+
+.nav-button:hover::after {
+  width: 0 !important; /* Disable underline on button style */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    padding: 14px 20px;
+  }
+  
+  .navbar-links {
+    gap: 24px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,152 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar general */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(to right, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
+  border-bottom: 1px solid rgba(246, 246, 246, 0.35);
+}
+
+nav {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav span {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+nav div {
+  display: flex;
+  gap: 40px;
+  font-size: 0.95rem;
+}
+
+/* Button margin fix */
+.btn-row .btn-primary + .btn-primary {
+  margin-left: 12px;
+}
+
+/* Hero container with particles */
+
+#hero,
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  width: 100%;
+  max-width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#tsparticles {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; /* center the whole group */
+  gap: 4rem; /* space between left & right */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-left {
+  flex: 1 1 0%;
+  max-width: 100%;
+}
+
+.hero-right {
+  flex: 0 0 280px; /* square-ish fixed width */
+  width: 280px;
+  height: 280px; /* SAME HEIGHT = SQUARE */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px; /* slight rounded corners for modern look */
+  width: 100%;
+  height: 100%; /* fills square parent */
+  padding: 24px;
+  color: #eaeaea;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Staggered fade-ins for hero left and right */
+
+.hero-left.fade-in {
+  animation: fadeInUp 600ms ease 100ms both;
+}
+
+.hero-right.fade-in {
+  animation: fadeInUp 700ms ease 400ms both;
+}
+
+/* Mobile height width adjustments */
+
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    gap: 4rem;
+    align-items: stretch;
+  }
+
+  .hero-right {
+    width: 100%;
+    height: 300px; /* rectangular on mobile */
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .hero {
+    padding: 50px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 16px;
+  }
+}
