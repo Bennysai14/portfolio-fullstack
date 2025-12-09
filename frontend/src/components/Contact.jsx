@@ -31,10 +31,22 @@ function Contact() {
         }
       );
 
+      if (!res.ok) {
+        console.error("Backend HTTP error:", res.status);
+        setStatus("error");
+        return;
+      }
+
       const data = await res.json();
-      setStatus(data.status);
+
+      if (data.status === "ok") {
+        setStatus("ok");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Network or JSON error:", err);
       setStatus("error");
     }
   };
@@ -118,7 +130,11 @@ function Contact() {
             >
               🔗 LinkedIn
             </a>
-            <a href="https://github.com/Bennysai14" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/Bennysai14"
+              target="_blank"
+              rel="noreferrer"
+            >
               🧑‍💻 GitHub
             </a>
             <a
