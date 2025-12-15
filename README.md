@@ -42,5 +42,5 @@ Runs on: http://localhost:3000
 
 ## Live Demo
 
-- GitHub Pages (frontend only): [link to be added after deployment]
+- GitHub Pages (frontend only): https://bennysai14.github.io/portfolio-fullstack/
 
